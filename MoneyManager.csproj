@@ -99,6 +99,18 @@
     <Compile Include="View\Account\FrmManageAccount.Designer.cs">
       <DependentUpon>FrmManageAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Account_Type\FrmAddAccountType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Account_Type\FrmAddAccountType.Designer.cs">
+      <DependentUpon>FrmAddAccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Account_Type\FrmEditAccountType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Account_Type\FrmEditAccountType.Designer.cs">
+      <DependentUpon>FrmEditAccountType.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Account_Type\FrmManageAccountType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Account\FrmManageAccount.resx">
       <DependentUpon>FrmManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Account_Type\FrmAddAccountType.resx">
+      <DependentUpon>FrmAddAccountType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Account_Type\FrmEditAccountType.resx">
+      <DependentUpon>FrmEditAccountType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Account_Type\FrmManageAccountType.resx">
       <DependentUpon>FrmManageAccountType.cs</DependentUpon>

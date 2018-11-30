@@ -39,8 +39,8 @@
             this.memoAccount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveAccountBtn = new System.Windows.Forms.Button();
+            this.cancelAccountBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -154,7 +154,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(381, 30);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Add Account";
+            this.label1.Text = "Edit Account";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -166,8 +166,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.saveAccountBtn, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cancelAccountBtn, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 164);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -175,23 +175,23 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(381, 29);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // button1
+            // saveAccountBtn
             // 
-            this.button1.Location = new System.Drawing.Point(92, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveAccountBtn.Location = new System.Drawing.Point(92, 3);
+            this.saveAccountBtn.Name = "saveAccountBtn";
+            this.saveAccountBtn.Size = new System.Drawing.Size(95, 23);
+            this.saveAccountBtn.TabIndex = 4;
+            this.saveAccountBtn.Text = "Save";
+            this.saveAccountBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // cancelAccountBtn
             // 
-            this.button2.Location = new System.Drawing.Point(193, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelAccountBtn.Location = new System.Drawing.Point(193, 3);
+            this.cancelAccountBtn.Name = "cancelAccountBtn";
+            this.cancelAccountBtn.Size = new System.Drawing.Size(95, 23);
+            this.cancelAccountBtn.TabIndex = 5;
+            this.cancelAccountBtn.Text = "Cancel";
+            this.cancelAccountBtn.UseVisualStyleBackColor = true;
             // 
             // FrmEditAccount
             // 
@@ -226,7 +226,7 @@
         private System.Windows.Forms.TextBox memoAccount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveAccountBtn;
+        private System.Windows.Forms.Button cancelAccountBtn;
     }
 }

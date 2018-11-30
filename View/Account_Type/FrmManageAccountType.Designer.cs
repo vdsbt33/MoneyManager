@@ -119,7 +119,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmManageAccountType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Money Manager - Manage Accout Type";
+            this.Text = "Money Manager - Manage Account Type";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmManageAccountType_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeGridView)).EndInit();

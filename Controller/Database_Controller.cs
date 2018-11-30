@@ -12,7 +12,7 @@ namespace MoneyManager.Controller
     public class Database_Controller
     {
         // Singleton
-        private Database_Controller self;
+        private static Database_Controller self;
 
         private Database_Controller()
         {

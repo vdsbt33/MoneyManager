@@ -12,7 +12,7 @@ namespace MoneyManager.Controller
     public class AccountDAO
     {
         // Singleton
-        private AccountDAO self;
+        private static AccountDAO self;
 
         public AccountDAO()
         {
@@ -37,9 +37,12 @@ namespace MoneyManager.Controller
         // Select
         public List<Account> GetAllAccounts()
         {
-            return;
+            return null;
         }
 
+        /// <summary>
+        /// Gets an account by its ID
+        /// </summary>
         public static Account GetAccountById(int id)
         {
             // Parameters

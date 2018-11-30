@@ -8,27 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MoneyManager.View
+namespace MoneyManager.View.Account
 {
-    public partial class FrmManageAccount : Form
+    public partial class FrmEditAccount : Form
     {
         // Singleton
-        private static FrmManageAccount self;
+        private static FrmEditAccount self;
 
-        private FrmManageAccount()
+        private FrmEditAccount()
         {
             InitializeComponent();
         }
 
-        public static FrmManageAccount GetForm()
+        public static FrmEditAccount GetForm()
         {
             if (self == null)
             {
-                self = new FrmManageAccount();
+                self = new FrmEditAccount();
             }
             return self;
         }
 
-        
+
     }
 }

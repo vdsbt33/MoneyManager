@@ -12,7 +12,7 @@ namespace MoneyManager.Controller
     public class Account_TypeDAO
     {
         // Singleton
-        private Account_TypeDAO self;
+        private static Account_TypeDAO self;
 
         public Account_TypeDAO()
         {
@@ -34,14 +34,16 @@ namespace MoneyManager.Controller
         
         // Variables
 
+        /// <summary>
+        /// Gets an account type by its id
+        /// </summary>
         public static Account_Type GetAccountTypeById(int id)
         {
-            db.GetController().ExecuteReader_Account()
             // Parameters
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             parameters.Add(new MySqlParameter("idAccount_Type", id));
             
-            List<Account_Type> result = Database_Controller.GetSelf().ExecuteReader_Account(SELECT_ACCOUNT_TYPE_BY_ID, parameters);
+            List<Account_Type> result = Database_Controller.GetSelf().ExecuteReader_Account_Type(SELECT_ACCOUNT_TYPE_BY_ID, parameters);
             if (result.Count() == 1)
             {
                 return result[0];

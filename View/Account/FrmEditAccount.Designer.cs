@@ -1,4 +1,4 @@
-﻿namespace MoneyManager.View
+﻿namespace MoneyManager.View.Account
 {
     partial class FrmEditAccount
     {

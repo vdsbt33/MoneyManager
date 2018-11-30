@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using MoneyManager.View;
+using MoneyManager.View.Account;
 
 namespace MoneyManager
 {
@@ -21,7 +21,7 @@ namespace MoneyManager
 
         private void accountManagementButton_Click(object sender, EventArgs e)
         {
-            FrmManageAccount.GetForm().ShowDialog();
+            FrmManageAccount.GetSelf().Show();
         }
     }
 }

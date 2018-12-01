@@ -1,0 +1,8 @@
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.csprojAssemblyReference.cache
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.FrmMain.resources
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.Properties.Resources.resources
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.View.FrmAddAccount.resources
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.View.FrmEditAccount.resources
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.View.FrmManageAccount.resources
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.csproj.GenerateResource.cache
+C:\Users\Vinicius\source\repos\MoneyManager\obj\Debug\MoneyManager.csproj.CoreCompileInputs.cache

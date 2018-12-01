@@ -37,7 +37,7 @@ namespace MoneyManager.Controller
         // Select
         public List<Account> GetAllAccounts()
         {
-            return;
+            return null;
         }
 
         public static Account GetAccountById(int id)

@@ -78,6 +78,7 @@
             this.accountGridView.Size = new System.Drawing.Size(515, 209);
             this.accountGridView.TabIndex = 0;
             this.accountGridView.TabStop = false;
+            this.accountGridView.SelectionChanged += new System.EventHandler(this.accountGridView_SelectionChanged);
             // 
             // idAccount
             // 
@@ -142,6 +143,7 @@
             // 
             // deleteAccountBtn
             // 
+            this.deleteAccountBtn.Enabled = false;
             this.deleteAccountBtn.Location = new System.Drawing.Point(302, 4);
             this.deleteAccountBtn.Name = "deleteAccountBtn";
             this.deleteAccountBtn.Size = new System.Drawing.Size(75, 23);
@@ -151,12 +153,14 @@
             // 
             // editAccountBtn
             // 
+            this.editAccountBtn.Enabled = false;
             this.editAccountBtn.Location = new System.Drawing.Point(220, 4);
             this.editAccountBtn.Name = "editAccountBtn";
             this.editAccountBtn.Size = new System.Drawing.Size(75, 23);
             this.editAccountBtn.TabIndex = 2;
             this.editAccountBtn.Text = "Edit";
             this.editAccountBtn.UseVisualStyleBackColor = true;
+            this.editAccountBtn.Click += new System.EventHandler(this.editAccountBtn_Click);
             // 
             // addAccountBtn
             // 

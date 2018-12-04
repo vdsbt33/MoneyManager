@@ -34,7 +34,9 @@ namespace MoneyManager.Controller
         // SELECT
         private const string SELECT_ACCOUNT_ALL = "SELECT idAccount, nameAccount, balanceAccount, memoAccount, accountType FROM account";
         private const string SELECT_ACCOUNT_BY_ID = "SELECT idAccount, nameAccount, balanceAccount, memoAccount, accountType FROM account WHERE idAccount = ?;";
-        private const string SELECT_ACCOUNT_AND_TYPE_ALL = "SELECT acc.idAccount, acc.nameAccount, acc.balanceAccount, acc.memoAccount, typ.idAccount_Type, typ.nameAccount_Type FROM account acc JOIN account_Type typ ON typ.idAccount_Type = acc.idAccount;";
+        private const string SELECT_ACCOUNT_AND_TYPE_ALL = "SELECT acc.idAccount, acc.nameAccount, acc.balanceAccount, acc.memoAccount, typ.idAccount_Type, typ.nameAccount_Type FROM account acc JOIN account_Type typ ON typ.idAccount_Type = acc.idAccount  ORDER BY acc.idAccount ASC;";
+        //Update
+        private const string UPDATE_ACCOUNT = "UPDATE account set nameAccount = ?, balanceAccount = ?, memoAccount = ?, accountType = ? WHERE idAccount = ?;";
 
         // Variables
 
@@ -47,8 +49,9 @@ namespace MoneyManager.Controller
             parameters.Add(new MySqlParameter("balanceAccount", account.balanceAccount));
             parameters.Add(new MySqlParameter("memoAccount", account.memoAccount));
             parameters.Add(new MySqlParameter("accountType", account.accountType.idAccount_Type));
+            parameters.Add(new MySqlParameter("idAccount", account.idAccount));
 
-            int val = Database_Controller.GetSelf().ExecuteNonQuery(INSERT_ACCOUNT, parameters);
+            int val = Database_Controller.GetSelf().ExecuteNonQuery(UPDATE_ACCOUNT, parameters);
 
             if (val >= 0)
             {
@@ -56,7 +59,7 @@ namespace MoneyManager.Controller
                 return null;
             } else
             {
-                return new Exception("An error ocurred while trying to insert an account. (" + val + ")");
+                return new Exception("An error ocurred while trying to edit an account. (" + val + ")");
             }
             
         }
@@ -93,6 +96,30 @@ namespace MoneyManager.Controller
                 return accounts[0];
             }
             return null;
+        }
+
+        /// <summary>
+        /// Updates an account on database
+        /// </summary>
+        public bool UpdateAccount(Account account)
+        {
+            // Parameters
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            parameters.Add(new MySqlParameter("nameAccount", account.nameAccount));
+            parameters.Add(new MySqlParameter("balanceAccount", account.balanceAccount));
+            parameters.Add(new MySqlParameter("memoAccount", account.memoAccount));
+            parameters.Add(new MySqlParameter("accountType", account.accountType.idAccount_Type));
+            parameters.Add(new MySqlParameter("idAccount", account.idAccount));
+
+
+            // Update database
+            int val = Database_Controller.GetSelf().ExecuteNonQuery(UPDATE_ACCOUNT, parameters);
+
+            if (val >= 0)
+            {
+                return true;
+            }
+            return false;
         }
 
     }

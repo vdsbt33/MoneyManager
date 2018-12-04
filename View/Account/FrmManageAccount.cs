@@ -67,5 +67,27 @@ namespace MoneyManager.View.Account
                 UpdateList();
             }
         }
+
+        private void editAccountBtn_Click(object sender, EventArgs e)
+        {
+            FrmEditAccount form = new FrmEditAccount(accounts[accountGridView.SelectedRows[0].Index]);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                UpdateList();
+            }
+        }
+
+        private void accountGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (accountGridView.SelectedRows[0].Cells[0].Value != null)
+            {
+                editAccountBtn.Enabled = true;
+                deleteAccountBtn.Enabled = true;
+            } else
+            {
+                editAccountBtn.Enabled = false;
+                deleteAccountBtn.Enabled = false;
+            }
+        }
     }
 }

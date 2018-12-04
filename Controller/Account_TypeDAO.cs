@@ -29,7 +29,7 @@ namespace MoneyManager.Controller
         }
 
         // Connection Strings
-        private const string SELECT_ACCOUNT_TYPE_ALL = "SELECT idAccount_Type, nameAccount_Type FROM Account_Type";
+        private const string SELECT_ACCOUNT_TYPE_ALL = "SELECT idAccount_Type, nameAccount_Type FROM Account_Type ORDER BY idAccount_Type ASC;";
         private const string SELECT_ACCOUNT_TYPE_BY_ID = "SELECT idAccount_Type, nameAccount_Type WHERE idAccount_Type = ?;";
         
         // Variables

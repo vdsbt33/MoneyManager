@@ -90,6 +90,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.balanceAccount.DecimalPlaces = 2;
             this.balanceAccount.Location = new System.Drawing.Point(137, 56);
+            this.balanceAccount.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.balanceAccount.Name = "balanceAccount";
             this.balanceAccount.Size = new System.Drawing.Size(241, 20);
             this.balanceAccount.TabIndex = 3;

@@ -35,7 +35,7 @@ namespace MoneyManager.Controller
 
 
         // INSERT
-        /* ExecuteInsert function */
+        /* Insert/Update/Delete function */
         /// <summary>
         /// Executes a query depending on the query string.
         /// </summary>

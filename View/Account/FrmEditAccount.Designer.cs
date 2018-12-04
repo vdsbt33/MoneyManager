@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.balanceAccount = new System.Windows.Forms.NumericUpDown();
             this.accountType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,10 +41,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.saveAccountBtn = new System.Windows.Forms.Button();
             this.cancelAccountBtn = new System.Windows.Forms.Button();
-            this.balanceAccount = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.balanceAccount)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -72,6 +72,23 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 105);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
+            // balanceAccount
+            // 
+            this.balanceAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.balanceAccount.DecimalPlaces = 2;
+            this.balanceAccount.Location = new System.Drawing.Point(137, 56);
+            this.balanceAccount.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.balanceAccount.Name = "balanceAccount";
+            this.balanceAccount.ReadOnly = true;
+            this.balanceAccount.Size = new System.Drawing.Size(241, 20);
+            this.balanceAccount.TabIndex = 3;
+            this.balanceAccount.ThousandsSeparator = true;
+            // 
             // accountType
             // 
             this.accountType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -80,7 +97,7 @@
             this.accountType.Location = new System.Drawing.Point(137, 29);
             this.accountType.Name = "accountType";
             this.accountType.Size = new System.Drawing.Size(241, 21);
-            this.accountType.TabIndex = 3;
+            this.accountType.TabIndex = 2;
             // 
             // label2
             // 
@@ -109,7 +126,7 @@
             this.nameAccount.Location = new System.Drawing.Point(137, 3);
             this.nameAccount.Name = "nameAccount";
             this.nameAccount.Size = new System.Drawing.Size(241, 20);
-            this.nameAccount.TabIndex = 5;
+            this.nameAccount.TabIndex = 1;
             // 
             // label4
             // 
@@ -136,7 +153,7 @@
             this.memoAccount.Location = new System.Drawing.Point(137, 82);
             this.memoAccount.Name = "memoAccount";
             this.memoAccount.Size = new System.Drawing.Size(241, 20);
-            this.memoAccount.TabIndex = 10;
+            this.memoAccount.TabIndex = 4;
             // 
             // label1
             // 
@@ -176,6 +193,7 @@
             this.saveAccountBtn.TabIndex = 4;
             this.saveAccountBtn.Text = "Save";
             this.saveAccountBtn.UseVisualStyleBackColor = true;
+            this.saveAccountBtn.Click += new System.EventHandler(this.saveAccountBtn_Click);
             // 
             // cancelAccountBtn
             // 
@@ -185,18 +203,7 @@
             this.cancelAccountBtn.TabIndex = 5;
             this.cancelAccountBtn.Text = "Cancel";
             this.cancelAccountBtn.UseVisualStyleBackColor = true;
-            // 
-            // balanceAccount
-            // 
-            this.balanceAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.balanceAccount.DecimalPlaces = 2;
-            this.balanceAccount.Location = new System.Drawing.Point(137, 56);
-            this.balanceAccount.Name = "balanceAccount";
-            this.balanceAccount.ReadOnly = true;
-            this.balanceAccount.Size = new System.Drawing.Size(241, 20);
-            this.balanceAccount.TabIndex = 13;
-            this.balanceAccount.ThousandsSeparator = true;
+            this.cancelAccountBtn.Click += new System.EventHandler(this.cancelAccountBtn_Click);
             // 
             // FrmEditAccount
             // 
@@ -213,8 +220,8 @@
             this.Text = "Money Manager - Edit Account";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.balanceAccount)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

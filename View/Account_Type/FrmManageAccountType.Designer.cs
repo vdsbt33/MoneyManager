@@ -34,6 +34,8 @@
             this.editAccountTypeBtn = new System.Windows.Forms.Button();
             this.addAccountTypeBtn = new System.Windows.Forms.Button();
             this.accountTypeGridView = new System.Windows.Forms.DataGridView();
+            this.idAccount_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameAccount_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeGridView)).BeginInit();
             this.SuspendLayout();
@@ -104,10 +106,30 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.accountTypeGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountTypeGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAccount_Type,
+            this.nameAccount_Type});
             this.accountTypeGridView.Location = new System.Drawing.Point(15, 94);
+            this.accountTypeGridView.MultiSelect = false;
             this.accountTypeGridView.Name = "accountTypeGridView";
+            this.accountTypeGridView.ReadOnly = true;
+            this.accountTypeGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.accountTypeGridView.Size = new System.Drawing.Size(515, 244);
             this.accountTypeGridView.TabIndex = 5;
+            // 
+            // idAccount_Type
+            // 
+            this.idAccount_Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idAccount_Type.FillWeight = 20.30457F;
+            this.idAccount_Type.HeaderText = "ID";
+            this.idAccount_Type.Name = "idAccount_Type";
+            // 
+            // nameAccount_Type
+            // 
+            this.nameAccount_Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameAccount_Type.FillWeight = 179.6954F;
+            this.nameAccount_Type.HeaderText = "Name";
+            this.nameAccount_Type.Name = "nameAccount_Type";
             // 
             // FrmManageAccountType
             // 
@@ -135,5 +157,7 @@
         private System.Windows.Forms.Button editAccountTypeBtn;
         private System.Windows.Forms.Button addAccountTypeBtn;
         private System.Windows.Forms.DataGridView accountTypeGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAccount_Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameAccount_Type;
     }
 }

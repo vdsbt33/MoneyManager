@@ -14,7 +14,7 @@ namespace MoneyManager.Controller
         // Singleton
         private static Account_TypeDAO self;
 
-        public Account_TypeDAO()
+        private Account_TypeDAO()
         {
 
         }
@@ -29,7 +29,7 @@ namespace MoneyManager.Controller
         }
 
         // Connection Strings
-        private const string SELECT_ACCOUNT_TYPE_ALL = "SELECT idAccount, nameAccount, balanceAccount, memoAccount, accountType FROM Account";
+        private const string SELECT_ACCOUNT_TYPE_ALL = "SELECT idAccount_Type, nameAccount_Type FROM Account_Type";
         private const string SELECT_ACCOUNT_TYPE_BY_ID = "SELECT idAccount_Type, nameAccount_Type WHERE idAccount_Type = ?;";
         
         // Variables
@@ -37,7 +37,7 @@ namespace MoneyManager.Controller
         /// <summary>
         /// Gets an account type by its id
         /// </summary>
-        public static Account_Type GetAccountTypeById(int id)
+        public Account_Type GetAccountTypeById(int id)
         {
             // Parameters
             List<MySqlParameter> parameters = new List<MySqlParameter>();
@@ -47,6 +47,22 @@ namespace MoneyManager.Controller
             if (result.Count() == 1)
             {
                 return result[0];
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets all account types
+        /// </summary>
+        public List<Account_Type> GetAccountAll()
+        {
+            // Parameters
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+
+            List<Account_Type> result = Database_Controller.GetSelf().ExecuteReader_Account_Type(SELECT_ACCOUNT_TYPE_ALL, parameters);
+            if (result.Count() > 0)
+            {
+                return result;
             }
             return null;
         }

@@ -8,7 +8,7 @@ namespace MoneyManager.Model
 {
     public interface IAccount_Type
     {
-        Account idAccount_Type { get; set; }
+        int idAccount_Type { get; set; }
         string nameAccount_Type { get; set; }
     }
 }

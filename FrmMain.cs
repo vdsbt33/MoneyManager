@@ -17,11 +17,17 @@ namespace MoneyManager
         public FrmMain()
         {
             InitializeComponent();
+
+            // Initialize Controllers
+            Controller.AccountDAO.GetSelf();
+            Controller.Account_TypeDAO.GetSelf();
+            Controller.Database_Controller.GetSelf();
         }
 
         private void accountManagementButton_Click(object sender, EventArgs e)
         {
-            FrmManageAccount.GetSelf().Show();
+            FrmManageAccount form = new FrmManageAccount();
+            form.Show();
         }
     }
 }

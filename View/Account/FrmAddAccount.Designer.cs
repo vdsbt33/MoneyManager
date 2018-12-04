@@ -30,18 +30,19 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.balanceAccount = new System.Windows.Forms.NumericUpDown();
             this.accountType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.nameAccount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.balanceAccount = new System.Windows.Forms.TextBox();
             this.memoAccount = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.addAccountBtn = new System.Windows.Forms.Button();
             this.cancelAccountBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.balanceAccount)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,13 +65,13 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.balanceAccount, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.accountType, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.nameAccount, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.balanceAccount, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.memoAccount, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 53);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -83,6 +84,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 105);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // balanceAccount
+            // 
+            this.balanceAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.balanceAccount.DecimalPlaces = 2;
+            this.balanceAccount.Location = new System.Drawing.Point(137, 56);
+            this.balanceAccount.Name = "balanceAccount";
+            this.balanceAccount.Size = new System.Drawing.Size(241, 20);
+            this.balanceAccount.TabIndex = 3;
+            this.balanceAccount.ThousandsSeparator = true;
+            // 
             // accountType
             // 
             this.accountType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -91,23 +103,25 @@
             this.accountType.Location = new System.Drawing.Point(137, 29);
             this.accountType.Name = "accountType";
             this.accountType.Size = new System.Drawing.Size(241, 21);
-            this.accountType.TabIndex = 3;
+            this.accountType.TabIndex = 2;
             // 
             // label2
             // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 21);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Account name:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 21);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Account type:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -118,14 +132,14 @@
             this.nameAccount.Location = new System.Drawing.Point(137, 3);
             this.nameAccount.Name = "nameAccount";
             this.nameAccount.Size = new System.Drawing.Size(241, 20);
-            this.nameAccount.TabIndex = 5;
+            this.nameAccount.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.Location = new System.Drawing.Point(3, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 21);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Account balance:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -134,18 +148,9 @@
             this.label5.Location = new System.Drawing.Point(3, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 21);
-            this.label5.TabIndex = 7;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Account memo:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // balanceAccount
-            // 
-            this.balanceAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.balanceAccount.Location = new System.Drawing.Point(137, 56);
-            this.balanceAccount.Name = "balanceAccount";
-            this.balanceAccount.Size = new System.Drawing.Size(241, 20);
-            this.balanceAccount.TabIndex = 9;
             // 
             // memoAccount
             // 
@@ -154,7 +159,7 @@
             this.memoAccount.Location = new System.Drawing.Point(137, 82);
             this.memoAccount.Name = "memoAccount";
             this.memoAccount.Size = new System.Drawing.Size(241, 20);
-            this.memoAccount.TabIndex = 10;
+            this.memoAccount.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
@@ -179,18 +184,20 @@
             this.addAccountBtn.Location = new System.Drawing.Point(92, 3);
             this.addAccountBtn.Name = "addAccountBtn";
             this.addAccountBtn.Size = new System.Drawing.Size(95, 23);
-            this.addAccountBtn.TabIndex = 4;
+            this.addAccountBtn.TabIndex = 5;
             this.addAccountBtn.Text = "Add";
             this.addAccountBtn.UseVisualStyleBackColor = true;
+            this.addAccountBtn.Click += new System.EventHandler(this.addAccountBtn_Click);
             // 
             // cancelAccountBtn
             // 
             this.cancelAccountBtn.Location = new System.Drawing.Point(193, 3);
             this.cancelAccountBtn.Name = "cancelAccountBtn";
             this.cancelAccountBtn.Size = new System.Drawing.Size(95, 23);
-            this.cancelAccountBtn.TabIndex = 5;
+            this.cancelAccountBtn.TabIndex = 6;
             this.cancelAccountBtn.Text = "Cancel";
             this.cancelAccountBtn.UseVisualStyleBackColor = true;
+            this.cancelAccountBtn.Click += new System.EventHandler(this.cancelAccountBtn_Click);
             // 
             // FrmAddAccount
             // 
@@ -207,6 +214,7 @@
             this.Text = "Money Manager - Add Account";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.balanceAccount)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -222,10 +230,10 @@
         private System.Windows.Forms.TextBox nameAccount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox balanceAccount;
         private System.Windows.Forms.TextBox memoAccount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button addAccountBtn;
         private System.Windows.Forms.Button cancelAccountBtn;
+        private System.Windows.Forms.NumericUpDown balanceAccount;
     }
 }

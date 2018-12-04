@@ -30,6 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.accountGridView = new System.Windows.Forms.DataGridView();
+            this.idAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balanceAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memoAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.deleteAccountBtn = new System.Windows.Forms.Button();
             this.editAccountBtn = new System.Windows.Forms.Button();
@@ -59,10 +64,60 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.accountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAccount,
+            this.nameAccount,
+            this.balanceAmount,
+            this.memoAccount,
+            this.accountType});
             this.accountGridView.Location = new System.Drawing.Point(15, 94);
+            this.accountGridView.MultiSelect = false;
             this.accountGridView.Name = "accountGridView";
+            this.accountGridView.ReadOnly = true;
+            this.accountGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.accountGridView.Size = new System.Drawing.Size(515, 209);
-            this.accountGridView.TabIndex = 2;
+            this.accountGridView.TabIndex = 0;
+            this.accountGridView.TabStop = false;
+            // 
+            // idAccount
+            // 
+            this.idAccount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idAccount.FillWeight = 44.50533F;
+            this.idAccount.HeaderText = "ID";
+            this.idAccount.Name = "idAccount";
+            this.idAccount.ReadOnly = true;
+            // 
+            // nameAccount
+            // 
+            this.nameAccount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameAccount.FillWeight = 131.655F;
+            this.nameAccount.HeaderText = "Name";
+            this.nameAccount.Name = "nameAccount";
+            this.nameAccount.ReadOnly = true;
+            // 
+            // balanceAmount
+            // 
+            this.balanceAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.balanceAmount.FillWeight = 98.46803F;
+            this.balanceAmount.HeaderText = "Balance";
+            this.balanceAmount.Name = "balanceAmount";
+            this.balanceAmount.ReadOnly = true;
+            // 
+            // memoAccount
+            // 
+            this.memoAccount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.memoAccount.FillWeight = 126.9036F;
+            this.memoAccount.HeaderText = "Memo";
+            this.memoAccount.Name = "memoAccount";
+            this.memoAccount.ReadOnly = true;
+            // 
+            // accountType
+            // 
+            this.accountType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.accountType.FillWeight = 98.46803F;
+            this.accountType.HeaderText = "Account Type";
+            this.accountType.Name = "accountType";
+            this.accountType.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -90,7 +145,7 @@
             this.deleteAccountBtn.Location = new System.Drawing.Point(302, 4);
             this.deleteAccountBtn.Name = "deleteAccountBtn";
             this.deleteAccountBtn.Size = new System.Drawing.Size(75, 23);
-            this.deleteAccountBtn.TabIndex = 1;
+            this.deleteAccountBtn.TabIndex = 3;
             this.deleteAccountBtn.Text = "Delete";
             this.deleteAccountBtn.UseVisualStyleBackColor = true;
             // 
@@ -108,9 +163,10 @@
             this.addAccountBtn.Location = new System.Drawing.Point(138, 4);
             this.addAccountBtn.Name = "addAccountBtn";
             this.addAccountBtn.Size = new System.Drawing.Size(75, 23);
-            this.addAccountBtn.TabIndex = 0;
+            this.addAccountBtn.TabIndex = 1;
             this.addAccountBtn.Text = "Add";
             this.addAccountBtn.UseVisualStyleBackColor = true;
+            this.addAccountBtn.Click += new System.EventHandler(this.addAccountBtn_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -133,7 +189,7 @@
             this.accountTypeBtn.Location = new System.Drawing.Point(192, 3);
             this.accountTypeBtn.Name = "accountTypeBtn";
             this.accountTypeBtn.Size = new System.Drawing.Size(130, 23);
-            this.accountTypeBtn.TabIndex = 0;
+            this.accountTypeBtn.TabIndex = 4;
             this.accountTypeBtn.Text = "Manage Account Types";
             this.accountTypeBtn.UseVisualStyleBackColor = true;
             this.accountTypeBtn.Click += new System.EventHandler(this.accountTypeBtn_Click);
@@ -168,5 +224,10 @@
         private System.Windows.Forms.Button addAccountBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button accountTypeBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balanceAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn memoAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountType;
     }
 }

@@ -74,7 +74,7 @@
             this.accountManagementButton.Location = new System.Drawing.Point(136, 3);
             this.accountManagementButton.Name = "accountManagementButton";
             this.accountManagementButton.Size = new System.Drawing.Size(132, 38);
-            this.accountManagementButton.TabIndex = 0;
+            this.accountManagementButton.TabIndex = 1;
             this.accountManagementButton.TabStop = false;
             this.accountManagementButton.Text = "Account Management";
             this.accountManagementButton.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.ExpensesButton.Location = new System.Drawing.Point(136, 91);
             this.ExpensesButton.Name = "ExpensesButton";
             this.ExpensesButton.Size = new System.Drawing.Size(132, 38);
-            this.ExpensesButton.TabIndex = 0;
+            this.ExpensesButton.TabIndex = 3;
             this.ExpensesButton.TabStop = false;
             this.ExpensesButton.Text = "Expenses";
             this.ExpensesButton.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             this.incomesButton.Location = new System.Drawing.Point(136, 47);
             this.incomesButton.Name = "incomesButton";
             this.incomesButton.Size = new System.Drawing.Size(132, 38);
-            this.incomesButton.TabIndex = 0;
+            this.incomesButton.TabIndex = 2;
             this.incomesButton.TabStop = false;
             this.incomesButton.Text = "Incomes";
             this.incomesButton.UseVisualStyleBackColor = true;

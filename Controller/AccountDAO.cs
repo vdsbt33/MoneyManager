@@ -14,12 +14,12 @@ namespace MoneyManager.Controller
         // Singleton
         private static AccountDAO self;
 
-        public AccountDAO()
+        private AccountDAO()
         {
 
         }
 
-        public AccountDAO GetSelf()
+        public static AccountDAO GetSelf()
         {
             if (self == null)
             {
@@ -29,21 +29,59 @@ namespace MoneyManager.Controller
         }
 
         // Connection Strings
-        private const string SELECT_ACCOUNT_ALL = "SELECT idAccount, nameAccount, balanceAccount, memoAccount, accountType FROM Account";
-        private const string SELECT_ACCOUNT_BY_ID = "SELECT idAccount, nameAccount, balanceAccount, memoAccount, accountType FROM Account WHERE idAccount = ?;";
+        // INSERT
+        private const string INSERT_ACCOUNT = "INSERT INTO account ( nameAccount, balanceAccount, memoAccount, accountType ) VALUES ( ?, ?, ?, ? );";
+        // SELECT
+        private const string SELECT_ACCOUNT_ALL = "SELECT idAccount, nameAccount, balanceAccount, memoAccount, accountType FROM account";
+        private const string SELECT_ACCOUNT_BY_ID = "SELECT idAccount, nameAccount, balanceAccount, memoAccount, accountType FROM account WHERE idAccount = ?;";
+        private const string SELECT_ACCOUNT_AND_TYPE_ALL = "SELECT acc.idAccount, acc.nameAccount, acc.balanceAccount, acc.memoAccount, typ.idAccount_Type, typ.nameAccount_Type FROM account acc JOIN account_Type typ ON typ.idAccount_Type = acc.idAccount;";
 
         // Variables
 
+        // Insert
+        public Exception InsertAccount(Model.Account account)
+        {
+            // Parameters
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            parameters.Add(new MySqlParameter("nameAccount", account.nameAccount));
+            parameters.Add(new MySqlParameter("balanceAccount", account.balanceAccount));
+            parameters.Add(new MySqlParameter("memoAccount", account.memoAccount));
+            parameters.Add(new MySqlParameter("accountType", account.accountType.idAccount_Type));
+
+            int val = Database_Controller.GetSelf().ExecuteNonQuery(INSERT_ACCOUNT, parameters);
+
+            if (val >= 0)
+            {
+                account.idAccount = val;
+                return null;
+            } else
+            {
+                return new Exception("An error ocurred while trying to insert an account. (" + val + ")");
+            }
+            
+        }
+
         // Select
+        /// <summary>
+        /// Gets all accounts and their Account_Type
+        /// </summary>
         public List<Account> GetAllAccounts()
         {
+            // Parameters
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            
+            List<Account> accounts = Database_Controller.GetSelf().ExecuteReader_Account(SELECT_ACCOUNT_AND_TYPE_ALL, parameters);
+            if (accounts.Count() > 0)
+            {
+                return accounts;
+            }
             return null;
         }
 
         /// <summary>
         /// Gets an account by its ID
         /// </summary>
-        public static Account GetAccountById(int id)
+        public Account GetAccountById(int id)
         {
             // Parameters
             List<MySqlParameter> parameters = new List<MySqlParameter>();
@@ -56,5 +94,6 @@ namespace MoneyManager.Controller
             }
             return null;
         }
+
     }
 }

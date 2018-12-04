@@ -16,3 +16,5 @@ C:\Projects\MoneyManager\bin\Debug\MySql.Data.xml
 C:\Projects\MoneyManager\obj\Debug\MoneyManager.csproj.CopyComplete
 C:\Projects\MoneyManager\obj\Debug\MoneyManager.exe
 C:\Projects\MoneyManager\obj\Debug\MoneyManager.pdb
+C:\Projects\MoneyManager\obj\Debug\MoneyManager.View.Account_Type.FrmAddAccountType.resources
+C:\Projects\MoneyManager\obj\Debug\MoneyManager.View.Account_Type.FrmEditAccountType.resources

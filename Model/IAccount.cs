@@ -10,7 +10,7 @@ namespace MoneyManager.Model
     {
         int idAccount { get; set; }
         string nameAccount { get; set; }
-        double balanceAmount { get; set; }
+        double balanceAccount { get; set; }
         string memoAccount { get; set; }
         Account_Type accountType { get; set; }
     }

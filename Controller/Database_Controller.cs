@@ -39,9 +39,9 @@ namespace MoneyManager.Controller
         /// <summary>
         /// Executes a query depending on the query string.
         /// </summary>
-        public Exception ExecuteNonQuery(string query, List<MySqlParameter> parameters)
+        public int ExecuteNonQuery(string query, List<MySqlParameter> parameters)
         {
-            conn = new MySqlConnection();
+            conn = new MySqlConnection(connectionString);
             comm = new MySqlCommand(query, conn);
             
             foreach (MySqlParameter p in parameters)
@@ -52,10 +52,11 @@ namespace MoneyManager.Controller
             // Exception for comm.Prepare
             try
             {
+                conn.Open();
                 comm.Prepare();
             } catch (Exception Ex)
             {
-                return new Exception("Could not prepare the MySql query. \n\nError description: " + Ex.Message);
+                return -1;
             }
 
             // Exception for comm.ExecuteNonQuery
@@ -65,12 +66,11 @@ namespace MoneyManager.Controller
             }
             catch (Exception Ex)
             {
-                return new Exception("Failed to execute query to the database. \n\nError description: " + Ex.Message);
+                return -2;
             }
 
             conn.Close();
-
-            return null;
+            return (int) comm.LastInsertedId;
         }
 
         // SELECT
@@ -94,16 +94,18 @@ namespace MoneyManager.Controller
             List<Account> result = new List<Account>();
             try
             {
+                conn.Open();
+
                 using (MySqlDataReader reader = comm.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Account newAcc = new Account();
+                        Model.Account newAcc = new Model.Account();
                         newAcc.idAccount = reader.GetInt32("idAccount");
                         newAcc.nameAccount = reader.GetString("nameAccount");
-                        newAcc.balanceAmount = reader.GetDouble("balanceAccount");
+                        newAcc.balanceAccount = reader.GetDouble("balanceAccount");
                         newAcc.memoAccount = reader.GetString("memoAccount");
-                        newAcc.accountType = Account_TypeDAO.GetAccountTypeById(reader.GetInt32("accountType"));
+                        newAcc.accountType = new Model.Account_Type(reader.GetInt32("idAccount_Type"), reader.GetString("nameAccount_Type"));
                         result.Add(newAcc);
                     }
                 }
@@ -142,15 +144,19 @@ namespace MoneyManager.Controller
             List<Account_Type> result = new List<Account_Type>();
             try
             {
+                conn.Open();
                 using (MySqlDataReader reader = comm.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Account_Type newEntry = new Account_Type();
-                        newEntry.idAccount_Type = AccountDAO.GetAccountById(reader.GetInt32("idAccount_Type"));
-                        newEntry.nameAccount_Type = reader.GetString("nameAccount_Type");
+                        Account_Type newEntry = new Account_Type(reader.GetInt32("idAccount_Type"), reader.GetString("nameAccount_Type"));
                         result.Add(newEntry);
                     }
+                }
+
+                if (result.Count() > 0)
+                {
+                    return result;
                 }
             }
             catch (Exception Ex)
@@ -160,11 +166,6 @@ namespace MoneyManager.Controller
             finally
             {
                 conn.Close();
-            }
-
-            if (result.Count() > 0)
-            {
-                return result;
             }
             return null;
         }

@@ -8,29 +8,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MoneyManager.Model;
+using MoneyManager.Controller;
+
 using MoneyManager.View.Account;
 
 namespace MoneyManager.View.Account_Type
 {
     public partial class FrmManageAccountType : Form
     {
-        /* Singleton
-        private static FrmManageAccountType self; */
+        // Variables
+        List<Model.Account_Type> accounts;
 
         public FrmManageAccountType()
         {
             InitializeComponent();
-        }
-        /*
-        public static FrmManageAccountType GetSelf()
-        {
-            if (self == null)
-            {
-                self = new FrmManageAccountType();
-            }
-            return self;
-        }*/
 
+            accounts = Account_TypeDAO.GetSelf().GetAccountAll();
+            UpdateGrid();
+        }
+
+        /// <summary>
+        /// Updates the GridView to match the List<T>
+        /// </summary>
+        private void UpdateGrid()
+        {
+            accountTypeGridView.Rows.Clear();
+
+            foreach (Model.Account_Type at in accounts)
+            {
+                int index = accountTypeGridView.Rows.Add();
+                accountTypeGridView.Rows[index].Cells[0].Value = at.idAccount_Type;
+                accountTypeGridView.Rows[index].Cells[1].Value = at.nameAccount_Type;
+            }
+        }
         
         private void FrmManageAccountType_FormClosing(object sender, FormClosingEventArgs e)
         {

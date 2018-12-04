@@ -89,5 +89,24 @@ namespace MoneyManager.View.Account
                 deleteAccountBtn.Enabled = false;
             }
         }
+
+        private void deleteAccountBtn_Click(object sender, EventArgs e)
+        {
+            if (accountGridView.SelectedRows[0].Cells[0].Value != null)
+            {
+
+                if (MessageBox.Show("Are you sure you want to remove the account " + accounts[accountGridView.SelectedRows[0].Index].nameAccount + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (AccountDAO.GetSelf().RemoveAccount(accounts[accountGridView.SelectedRows[0].Index]) == true)
+                    {
+                        accounts.Remove(accounts[accountGridView.SelectedRows[0].Index]);
+                        UpdateList();
+                    } else
+                    {
+                        MessageBox.Show("It was not possible to remove the selected account.");
+                    }
+                }
+            }
+        }
     }
 }

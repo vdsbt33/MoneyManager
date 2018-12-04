@@ -150,6 +150,7 @@
             this.deleteAccountBtn.TabIndex = 3;
             this.deleteAccountBtn.Text = "Delete";
             this.deleteAccountBtn.UseVisualStyleBackColor = true;
+            this.deleteAccountBtn.Click += new System.EventHandler(this.deleteAccountBtn_Click);
             // 
             // editAccountBtn
             // 

@@ -79,7 +79,7 @@ namespace MoneyManager.View.Account
 
         private void accountGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (accountGridView.SelectedRows[0].Cells[0].Value != null)
+            if (accountGridView.SelectedRows.Count > 0 && accountGridView.SelectedRows[0].Cells[0].Value != null)
             {
                 editAccountBtn.Enabled = true;
                 deleteAccountBtn.Enabled = true;

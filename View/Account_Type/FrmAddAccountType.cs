@@ -18,6 +18,12 @@ namespace MoneyManager.View.Account_Type
             InitializeComponent();
         }
 
+        // Clear fields
+        private void ClearFields()
+        {
+            nameAccount_Type.Clear();
+        }
+
         /// Adds account to database
         private void addAccountTypeBtn_Click(object sender, EventArgs e)
         {
@@ -27,10 +33,12 @@ namespace MoneyManager.View.Account_Type
                 Exception error = Controller.Account_TypeDAO.GetSelf().InsertAccount_Type(accountType);
                 if (error == null)
                 {
+                    ClearFields();
                     MessageBox.Show("Account Type added sucessfully.");
                     this.DialogResult = DialogResult.OK;
                 } else
                 {
+                    ClearFields();
                     this.DialogResult = DialogResult.Cancel;
                 }
             }
@@ -40,7 +48,8 @@ namespace MoneyManager.View.Account_Type
         /// Cancels adding account to database
         private void cancelAccountTypeBtn_Click(object sender, EventArgs e)
         {
-
+            ClearFields();
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

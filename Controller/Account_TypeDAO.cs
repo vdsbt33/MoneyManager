@@ -128,5 +128,20 @@ namespace MoneyManager.Controller
             }
         }
 
+        public bool UpdateAccount_Type(Account_Type accountType)
+        {
+            // Parameters
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            parameters.Add(new MySqlParameter("nameAccount_Type", accountType.nameAccount_Type));
+            parameters.Add(new MySqlParameter("idAccount_Type", accountType.idAccount_Type));
+
+            int val = Database_Controller.GetSelf().ExecuteNonQuery(UPDATE_ACCOUNT, parameters);
+            
+            if (val >= 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

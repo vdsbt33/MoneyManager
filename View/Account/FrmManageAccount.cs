@@ -46,7 +46,10 @@ namespace MoneyManager.View.Account
                     accountGridView.Rows[index].Cells[4].Value = at.accountType.nameAccount_Type;
 
                 }
+
+                accountGridView_SelectionChanged(null, null);
             }
+
         }
 
         private void accountTypeBtn_Click(object sender, EventArgs e)
@@ -57,6 +60,7 @@ namespace MoneyManager.View.Account
             {
                 this.Show();
                 UpdateList();
+                accountGridView_SelectionChanged(null, null);
             }
         }
 

@@ -59,7 +59,10 @@ namespace MoneyManager.View.Account_Type
                     accountTypeGridView.Rows[index].Cells[0].Value = at.idAccount_Type;
                     accountTypeGridView.Rows[index].Cells[1].Value = at.nameAccount_Type;
                 }
+
+                accountTypeGridView_SelectionChanged(null, null);
             }
+            
         }
         
         private void FrmManageAccountType_FormClosing(object sender, FormClosingEventArgs e)
@@ -80,7 +83,13 @@ namespace MoneyManager.View.Account_Type
         // Edit Account Type
         private void editAccountTypeBtn_Click(object sender, EventArgs e)
         {
-
+            if (accountTypeGridView.SelectedRows[0].Cells[0].Value != null) {
+                FrmEditAccountType form = new FrmEditAccountType(accounts[accountTypeGridView.SelectedRows[0].Index]);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    UpdateList();
+                }
+            }
         }
 
         // Delete Account Type

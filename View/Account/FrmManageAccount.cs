@@ -32,20 +32,21 @@ namespace MoneyManager.View.Account
         {
             accounts = AccountDAO.GetSelf().GetAllAccounts();
 
-            // Update GridView
-            accountGridView.Rows.Clear();
+            if (accounts.Count > 0) {
+                // Update GridView
+                accountGridView.Rows.Clear();
 
-            foreach (Model.Account at in accounts)
-            {
-                int index = accountGridView.Rows.Add();
-                accountGridView.Rows[index].Cells[0].Value = at.idAccount;
-                accountGridView.Rows[index].Cells[1].Value = at.nameAccount;
-                accountGridView.Rows[index].Cells[2].Value = at.balanceAccount;
-                accountGridView.Rows[index].Cells[3].Value = at.memoAccount;
-                accountGridView.Rows[index].Cells[4].Value = at.accountType.nameAccount_Type;
+                foreach (Model.Account at in accounts)
+                {
+                    int index = accountGridView.Rows.Add();
+                    accountGridView.Rows[index].Cells[0].Value = at.idAccount;
+                    accountGridView.Rows[index].Cells[1].Value = at.nameAccount;
+                    accountGridView.Rows[index].Cells[2].Value = at.balanceAccount;
+                    accountGridView.Rows[index].Cells[3].Value = at.memoAccount;
+                    accountGridView.Rows[index].Cells[4].Value = at.accountType.nameAccount_Type;
 
+                }
             }
-
         }
 
         private void accountTypeBtn_Click(object sender, EventArgs e)

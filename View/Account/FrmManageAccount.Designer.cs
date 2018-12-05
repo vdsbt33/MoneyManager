@@ -74,6 +74,7 @@
             this.accountGridView.MultiSelect = false;
             this.accountGridView.Name = "accountGridView";
             this.accountGridView.ReadOnly = true;
+            this.accountGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.accountGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.accountGridView.Size = new System.Drawing.Size(515, 209);
             this.accountGridView.TabIndex = 0;

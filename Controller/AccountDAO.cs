@@ -28,7 +28,7 @@ namespace MoneyManager.Controller
             return self;
         }
 
-        // Connection Strings
+        // Command Strings
         // INSERT
         private const string INSERT_ACCOUNT = "INSERT INTO account ( nameAccount, balanceAccount, memoAccount, accountType ) VALUES ( ?, ?, ?, ? );";
         // SELECT
@@ -39,10 +39,17 @@ namespace MoneyManager.Controller
         private const string UPDATE_ACCOUNT = "UPDATE account set nameAccount = ?, balanceAccount = ?, memoAccount = ?, accountType = ? WHERE idAccount = ?;";
         // DELETE
         private const string DELETE_ACCOUNT = "DELETE FROM account WHERE idAccount = ?;";
-
+        // COUNT
+        private const string COUNT_ACCOUNT = "SELECT COUNT(ac.idAccount) as countAmount FROM account ac WHERE ac.accountType = ?;";
+        
         // Variables
 
         // Insert
+        /// <summary>
+        /// Inserts an Account into database.
+        /// </summary>
+        /// <param name="account">Account variable, which stores its information.</param>
+        /// <returns></returns>
         public Exception InsertAccount(Model.Account account)
         {
             // Parameters
@@ -67,15 +74,16 @@ namespace MoneyManager.Controller
 
         // Select
         /// <summary>
-        /// Gets all accounts and their Account_Type
+        /// Gets all accounts and their Account_Type.
         /// </summary>
+        /// <returns></returns>
         public List<Account> GetAllAccounts()
         {
             // Parameters
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             
             List<Account> accounts = Database_Controller.GetSelf().ExecuteReader_Account(SELECT_ACCOUNT_AND_TYPE_ALL, parameters);
-            if (accounts.Count() > 0)
+            if (accounts != null && accounts.Count() > 0)
             {
                 return accounts;
             }
@@ -83,8 +91,10 @@ namespace MoneyManager.Controller
         }
 
         /// <summary>
-        /// Gets an account by its ID
+        /// Returns an Account with the entered ID, if one exists.
         /// </summary>
+        /// <param name="id">ID of the target Account.</param>
+        /// <returns></returns>
         public Account GetAccountById(int id)
         {
             // Parameters
@@ -100,8 +110,9 @@ namespace MoneyManager.Controller
         }
 
         /// <summary>
-        /// Updates an account on database
+        /// Updates an account on database.
         /// </summary>
+        /// <param name="account">Variable with Account information, along with its ID.</param>
         public bool UpdateAccount(Account account)
         {
             // Parameters
@@ -123,7 +134,11 @@ namespace MoneyManager.Controller
             return false;
         }
 
-        
+        /// <summary>
+        /// Removes the entered Account from database.
+        /// </summary>
+        /// <param name="account">Target Account to be removed.</param>
+        /// <returns></returns>
         public bool RemoveAccount(Account account)
         {
             // Parameters
@@ -132,7 +147,7 @@ namespace MoneyManager.Controller
 
             // Remove entry
             int val = Database_Controller.GetSelf().ExecuteNonQuery(DELETE_ACCOUNT, parameters);
-
+            
             if (val >= 0)
             {
                 return true;

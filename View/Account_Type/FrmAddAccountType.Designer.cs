@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.nameAccountTypeBtn = new System.Windows.Forms.TextBox();
+            this.nameAccount_Type = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.addAccountTypeBtn = new System.Windows.Forms.Button();
             this.cancelAccountTypeBtn = new System.Windows.Forms.Button();
@@ -59,18 +59,19 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.nameAccountTypeBtn, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.nameAccount_Type, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 53);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 26);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // label2
             // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 21);
@@ -78,14 +79,14 @@
             this.label2.Text = "Account Type name:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // nameAccountTypeBtn
+            // nameAccount_Type
             // 
-            this.nameAccountTypeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.nameAccount_Type.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameAccountTypeBtn.Location = new System.Drawing.Point(137, 3);
-            this.nameAccountTypeBtn.Name = "nameAccountTypeBtn";
-            this.nameAccountTypeBtn.Size = new System.Drawing.Size(241, 20);
-            this.nameAccountTypeBtn.TabIndex = 5;
+            this.nameAccount_Type.Location = new System.Drawing.Point(137, 3);
+            this.nameAccount_Type.Name = "nameAccount_Type";
+            this.nameAccount_Type.Size = new System.Drawing.Size(241, 20);
+            this.nameAccount_Type.TabIndex = 5;
             // 
             // tableLayoutPanel2
             // 
@@ -113,6 +114,7 @@
             this.addAccountTypeBtn.TabIndex = 4;
             this.addAccountTypeBtn.Text = "Add";
             this.addAccountTypeBtn.UseVisualStyleBackColor = true;
+            this.addAccountTypeBtn.Click += new System.EventHandler(this.addAccountTypeBtn_Click);
             // 
             // cancelAccountTypeBtn
             // 
@@ -122,6 +124,7 @@
             this.cancelAccountTypeBtn.TabIndex = 5;
             this.cancelAccountTypeBtn.Text = "Cancel";
             this.cancelAccountTypeBtn.UseVisualStyleBackColor = true;
+            this.cancelAccountTypeBtn.Click += new System.EventHandler(this.cancelAccountTypeBtn_Click);
             // 
             // FrmAddAccountType
             // 
@@ -148,7 +151,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox nameAccountTypeBtn;
+        private System.Windows.Forms.TextBox nameAccount_Type;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button addAccountTypeBtn;
         private System.Windows.Forms.Button cancelAccountTypeBtn;

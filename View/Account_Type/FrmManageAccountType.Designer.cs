@@ -81,6 +81,7 @@
             this.deleteAccountTypeBtn.TabIndex = 1;
             this.deleteAccountTypeBtn.Text = "Delete";
             this.deleteAccountTypeBtn.UseVisualStyleBackColor = true;
+            this.deleteAccountTypeBtn.Click += new System.EventHandler(this.deleteAccountTypeBtn_Click);
             // 
             // editAccountTypeBtn
             // 
@@ -90,6 +91,7 @@
             this.editAccountTypeBtn.TabIndex = 2;
             this.editAccountTypeBtn.Text = "Edit";
             this.editAccountTypeBtn.UseVisualStyleBackColor = true;
+            this.editAccountTypeBtn.Click += new System.EventHandler(this.editAccountTypeBtn_Click);
             // 
             // addAccountTypeBtn
             // 
@@ -99,6 +101,7 @@
             this.addAccountTypeBtn.TabIndex = 0;
             this.addAccountTypeBtn.Text = "Add";
             this.addAccountTypeBtn.UseVisualStyleBackColor = true;
+            this.addAccountTypeBtn.Click += new System.EventHandler(this.addAccountTypeBtn_Click);
             // 
             // accountTypeGridView
             // 
@@ -113,9 +116,11 @@
             this.accountTypeGridView.MultiSelect = false;
             this.accountTypeGridView.Name = "accountTypeGridView";
             this.accountTypeGridView.ReadOnly = true;
+            this.accountTypeGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.accountTypeGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.accountTypeGridView.Size = new System.Drawing.Size(515, 244);
             this.accountTypeGridView.TabIndex = 5;
+            this.accountTypeGridView.SelectionChanged += new System.EventHandler(this.accountTypeGridView_SelectionChanged);
             // 
             // idAccount_Type
             // 
@@ -123,6 +128,7 @@
             this.idAccount_Type.FillWeight = 20.30457F;
             this.idAccount_Type.HeaderText = "ID";
             this.idAccount_Type.Name = "idAccount_Type";
+            this.idAccount_Type.ReadOnly = true;
             // 
             // nameAccount_Type
             // 
@@ -130,6 +136,7 @@
             this.nameAccount_Type.FillWeight = 179.6954F;
             this.nameAccount_Type.HeaderText = "Name";
             this.nameAccount_Type.Name = "nameAccount_Type";
+            this.nameAccount_Type.ReadOnly = true;
             // 
             // FrmManageAccountType
             // 

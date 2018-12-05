@@ -74,6 +74,49 @@ namespace MoneyManager.Controller
         }
 
         // SELECT
+        /* Execute Count function */
+        /// <summary>
+        /// Retrieves amount of rows from a table
+        /// </summary>
+        public int ExecuteCount(string query, List<MySqlParameter> parameters)
+        {
+            conn = new MySqlConnection(connectionString);
+            comm = new MySqlCommand(query, conn);
+
+            if (parameters.Count() > 0)
+            {
+                foreach (MySqlParameter p in parameters)
+                {
+                    comm.Parameters.AddWithValue(p.ParameterName, p.Value);
+                }
+            }
+
+            int result = 0;
+            try
+            {
+                conn.Open();
+                
+
+                using (MySqlDataReader reader = comm.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result = reader.GetInt32("countAmount");
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception("An error ocurred. Description: " + Ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return result;
+        }
+
         /* ExecuteSelect function for Account  */
         /// <summary>
         /// Retrieves data from Account table and saves in a List.
@@ -116,12 +159,8 @@ namespace MoneyManager.Controller
             {
                 conn.Close();
             }
-
-            if (result.Count() > 0)
-            {
-                return result;
-            }
-            return null;
+            
+            return result;
         }
 
         /* ExecuteSelect function for Account_type  */
@@ -154,10 +193,6 @@ namespace MoneyManager.Controller
                     }
                 }
 
-                if (result.Count() > 0)
-                {
-                    return result;
-                }
             }
             catch (Exception Ex)
             {
@@ -167,7 +202,7 @@ namespace MoneyManager.Controller
             {
                 conn.Close();
             }
-            return null;
+            return result;
         }
 
 
